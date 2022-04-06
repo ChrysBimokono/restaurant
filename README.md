@@ -1,70 +1,193 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is an E-commerce Restaurant built using React Framework
 
-## Available Scripts
+## Table of contents
 
-In the project directory, you can run:
+- [Overview](#overview)
+  - [The challenge](#the-challenge)
+  - [Screenshot](#screenshot)
+  - [Links](#links)
+- [My process](#my-process)
+  - [Built with](#built-with)
+  - [What I learned](#what-i-learned)
+  - [Continued development](#continued-development)
+  - [Useful resources](#useful-resources)
+- [Author](#author)
+- [Acknowledgments](#acknowledgments)
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Overview
 
-### `npm test`
+### The challenge
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+After completing the site, 
+users should be able to:
 
-### `npm run build`
+- View the optimal layout for each of the website's pages depending on their device's screen size
+- Move up and down sections of the website
+- Move up and down sections of the website
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- See hover states for all interactive elements on the page
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Screenshot
+I added a screenshot of my portfolio here.
 
-### `npm run eject`
+![](./src/assets/myportfolio.jpeg)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Links
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- Live Site URL: [Add live site URL here](https://pnitschool.netlify.app/)
 
-## Learn More
+## My process
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Built with
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- Semantic HTML5 markup
+- CSS custom properties
+- Flexbox
+- CSS Grid
+- Mobile-first workflow
+- REACT
 
-### Code Splitting
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### What I learned
 
-### Analyzing the Bundle Size
+I Used this section to recap over some of my major learnings while working through this project. Writing these out and providing code samples of areas i wanted to highlight.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Doing this project:
 
-### Making a Progressive Web App
+* I learned to design a web responsive site using React Framework 
+* I learned to design a website accessible to different types of users using React Framework
+* I used intensively CSS FlexBox LAYOUT.
+* I learned how to design a gallery section with React
+* I learned how to implement a video section 
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-### Advanced Configuration
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
-### Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
-### `npm run build` fails to minify
+```css
+/* for someone who is visually impaired */
+Made sure to implement this content for only screen readers to help users without vision.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+.app__gallery-content{
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+
+    min-width: 500px;
+    padding-right: 2rem;
+}
+
+.app__gallery-content button{
+    margin-top: 1rem;
+}
+
+.app__gallery-images{
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    max-width: 50%;
+    position: relative;
+}
+
+.app__gallery-images_container{
+    display: flex;
+    flex-direction: row;
+    width: max-content;
+    overflow-x: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.app__gallery-images_container::-webkit-scrollbar{
+    display: none;
+}
+
+.app__gallery-images_card{
+    position: relative;
+    min-width: 301px;
+    height: 447px;
+    margin-right: 2rem;
+}
+
+.gallery__image-icon{
+    position: absolute;
+    color: #fff;
+    font-size: 2rem;
+    opacity: 0.5;
+    tra
+```
+```js
+const galleryImages= [images.gallery01,images.gallery02,images.gallery03,images.gallery04]
+const Gallery = () => {
+   const scrollRef= React.useRef(null);
+
+   const scroll=(direction)=>{
+     const {current}= scrollRef;
+
+     if(direction === 'left'){
+       current.scrollLeft -= 300;
+     } else {
+       current.scrollLeft +=300
+     }
+   }
+  return (
+
+    <div className='app__gallery flex__center'>
+        <div className='app__gallery-centent'>
+          <SubHeading title= "instagram"/>
+          <h1 className='headtext__cormorant'>Photo Gallery</h1>
+          <p className='p__opensans' style={{color:"#AAA", marginTop:'2rem'}}>Metus vulputate eu scelerisque felis. At erat pellentesque adipiscing commodo elit</p>
+          <button type='button' className='custom__button'>View More</button>
+        </div>
+
+        <div className='app__gallery-images'>
+          <div className='app__gallery-images_container' ref={scrollRef}>
+              {galleryImages.map((image,index)=>(
+                <div className='app__gallery-images_card flex__center' key={`gallery_image-${index+1}`}>
+                  <img src={image} alt='gallery'/>
+                  <BsInstagram className='gallery__image-icon'/>
+                </div>
+              ) )}
+          </div>
+          <div className='app__gallery-images_arrows'>
+            <BsArrowLeftShort className='gallery__arrow-icon'onClick={()=>scroll('left')}/>
+            <BsArrowRightShort className='gallery__arrow-icon'onClick={()=>scroll('right')}/>
+          </div>
+        </div>
+     </div>
+
+  );
+ 
+}
+
+export default Nav
+```
+
+### Continued development
+However, I need to build website using even better and more resuable Reactcodes.
+
+
+### Useful resources
+
+- [Example resource 1](https://www.youtube.com/kepowob) - This helped me learn how to better use CSS Flex and Grid. I really liked this pattern and will use it going forward.
+
+## Author
+
+- Website - [Chrys-Bimokono](https://chrysbim.com/index.html)
+
+- Twitter - [@EnockBim](https://twitter.com/home)
+
+
+## Acknowledgments
+I really give thanks to the frontend community for their support and encouragement.
+
+
